@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ show.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img *ngIf="show.image" [src]="show.image.original" />
+    <ion-card-header>
+      <ion-card-title>{{ show.name }}</ion-card-title>
+      <ion-card-subtitle>{{ show.genres.join(', ') }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p [innerHTML]="show.summary"></p>
+      <p><strong>Language:</strong> {{ show.language }}</p>
+      <p><strong>Premiered:</strong> {{ show.premiered }}</p>
+      <p><strong>Rating:</strong> {{ show.rating.average }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
